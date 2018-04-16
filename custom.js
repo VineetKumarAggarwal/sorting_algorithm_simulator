@@ -17,7 +17,7 @@ $(document).ready(function()
 		{
 			stoppedDuration += (new Date() - timeStopped);
 		}
-		started = setInterval(clockRunning, 10);	
+		//started = setInterval(clockRunning, 10);	
 	}
 	function stop()
 	{
@@ -200,6 +200,19 @@ $(document).ready(function()
 			}	
 		}
 	});
+	$('#submit1').click(function()
+	{
+			$('.btn1').addClass("hidden");
+			$('.btn4').removeClass("hidden");
+			$('.btn3').removeClass("hidden");
+			$('#getnumber').addClass("hidden");
+			var i = 250;
+			for (j=0;j<i;j++)
+			{
+				
+				my_div.innerHTML = my_div.innerHTML +"<div class='row'><input type='number' class='abc form-control mt-1 mb-1' id='getnumber"+j+"' value='"+Math.floor((Math.random() * 1000) + 1)+"' placeholder='Enter Number "+j+"'></div>"
+			}	
+	});
 	$('#bubble').click(function()
 	{
 		var k = $('#getnumber').val();
@@ -228,7 +241,7 @@ $(document).ready(function()
 			swapp = false;
 			for (var i=0; i < n; i++)
 			{
-				if (parseInt(x[i]) > parseInt(x[i+1]))
+				if (parseFloat(x[i]) > parseFloat(x[i+1]))
 				{
 					var temp = x[i];
 					x[i] = x[i+1];
@@ -288,11 +301,11 @@ $(document).ready(function()
 			return array;
 		}
 		function compare(a, b) {
-			if (parseInt(a) < parseInt(b))
+			if (parseFloat(a) < parseFloat(b))
 			{
 				return -1;
 			}
-			if (parseInt(a) > parseInt(b))
+			if (parseFloat(a) > parseFloat(b))
 			{
 				return 1;
 			}  
@@ -306,7 +319,7 @@ $(document).ready(function()
 			return array;
 		}
 		selectionSort(arr);
-		console.log(selectionSort(arr));
+		
 		for (l=0; l < arr.length; l++)
 		{
 			my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+arr[l]+"' placeholder='Enter Number'></div>"
@@ -344,7 +357,7 @@ $(document).ready(function()
 		{
 			var result = [];
 			while (left.length && right.length) {
-				if (parseInt(left[0]) <= parseInt(right[0]))
+				if (parseFloat(left[0]) <= parseFloat(right[0]))
 				{
 					result.push(left.shift());
 				}
@@ -400,7 +413,7 @@ $(document).ready(function()
 				var length = origArray.length;
 				for (var i = 0; i < length; i++)
 				{
-					if (parseInt(origArray[i]) <= parseInt(pivot))
+					if (parseFloat(origArray[i]) <= parseFloat(pivot))
 					{
 						left.push(origArray[i]);
 					}
@@ -413,7 +426,7 @@ $(document).ready(function()
 			}
 		}
 		var myArray = val;
-		var arr = quickck_Sort(myArray);
+		var arr = quick_Sort(myArray);
 		stop();
 		clockRunning(); 
 		for (var l=0; l < arr.length; l++)
@@ -423,9 +436,10 @@ $(document).ready(function()
 		}
 		$('.btn2').addClass("hidden");
 	});
-	$('#all').click(function()
+	$('#allauto').click(function()
 	{
-		var k = $('#getnumber').val();
+	// 	var k = $('#getnumber').val();
+	    var k =250;
 		for (j=0;j<k;j++)
 		{	
 			if ($('#getnumber'+j).val()=="")
@@ -441,31 +455,113 @@ $(document).ready(function()
 		}
 		var myArray = val;
 		var arr = val;
-		var x = val;
+		var a = val;
 		var arry=val;
 		start1();
-		var result=mergeSort(arr);
+		var result1=mergeSort(arr);
 		stop1();
 		clockRunning1();
-		start2();
-		quick_Sort(myArray);
-		stop2();
-		clockRunning2();
 		start3();
-		bubble(x);
+		var result3=bubble(a);
 		stop3();
 		clockRunning3();
 		start4();
-		selectionSort(arry);
+		var result4 = selectionSort(arry);
 		stop4();
 		clockRunning4();
+		start2();
+		var result2 =quick_Sort(myArray);
+		stop2();
+		clockRunning2();
 		graph();
 		for (var l=0; l<k; l++)
 		{
-			console.log("hey");
-			my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result[l]+"' placeholder='Enter Number'></div>"
+			
+			my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result1[l]+"' placeholder='Enter Number'></div>"
 			$(".abc").addClass("hidden");
 		}
+		// for (var l=0; l<k; l++)
+		// {
+		// 	
+		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result2[l]+"' placeholder='Enter Number'></div>"
+		// 	$(".abc").addClass("hidden");
+		// }
+		// for (var l=0; l<k; l++)
+		// {
+			
+		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result2[l]+"' placeholder='Enter Number'></div>"
+		// 	$(".abc").addClass("hidden");
+		// }
+		// for (var l=0; l<k; l++)
+		// {
+		// 	
+		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result4[l]+"' placeholder='Enter Number'></div>"
+		// 	$(".abc").addClass("hidden");
+		// }
+		$('.btn2').addClass("hidden");
+	});
+	$('#all').click(function()
+	{
+	 	var k = $('#getnumber').val();
+	//   var k =250;
+		for (j=0;j<k;j++)
+		{	
+			if ($('#getnumber'+j).val()=="")
+			{
+				alert("Please enter appropriate values.");
+				return false;
+			}
+			else
+			{
+				val.push($('#getnumber'+j).val());	
+
+			}
+		}
+		var myArray = val;
+		var arr = val;
+		var a = val;
+		var arry=val;
+		start1();
+		var result1=mergeSort(arr);
+		stop1();
+		clockRunning1();
+		start3();
+		var result3=bubble(a);
+		stop3();
+		clockRunning3();
+		start4();
+		var result4 = selectionSort(arry);
+		stop4();
+		clockRunning4();
+		start2();
+		var result2 =quick_Sort(myArray);
+		stop2();
+		clockRunning2();
+		graph();
+		for (var l=0; l<k; l++)
+		{
+			
+			my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result1[l]+"' placeholder='Enter Number'></div>"
+			$(".abc").addClass("hidden");
+		}
+		// for (var l=0; l<k; l++)
+		// {
+		// 	
+		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result2[l]+"' placeholder='Enter Number'></div>"
+		// 	$(".abc").addClass("hidden");
+		// }
+		// for (var l=0; l<k; l++)
+		// {
+			
+		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result2[l]+"' placeholder='Enter Number'></div>"
+		// 	$(".abc").addClass("hidden");
+		// }
+		// for (var l=0; l<k; l++)
+		// {
+		// 	
+		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result4[l]+"' placeholder='Enter Number'></div>"
+		// 	$(".abc").addClass("hidden");
+		// }
 		$('.btn2').addClass("hidden");
 	});
 		function quick_Sort(origArray)
@@ -492,7 +588,7 @@ $(document).ready(function()
 						right.push(origArray[i]);
 					}
 				}
-				console.log("quick");
+				
 				return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
 			}
 		}
@@ -509,7 +605,7 @@ $(document).ready(function()
 		{
 			var result = [];
 			while (left.length && right.length) {
-				if (parseInt(left[0]) <= parseInt(right[0]))
+				if (parseFloat(left[0]) <= parseFloat(right[0]))
 				{
 					result.push(left.shift());
 				}
@@ -522,7 +618,7 @@ $(document).ready(function()
 				result.push(left.shift());
 			while (right.length)
 				result.push(right.shift());
-			console.log("merge");
+			
 			return result;
 		}
 		function selectionSort(array)
@@ -542,47 +638,46 @@ $(document).ready(function()
 				}
 				swap(array, index, smallestValIndex);
 			});
-			console.log("selection");
 			return array;
 		}
 		function compare(a, b) {
-			if (parseInt(a) < parseInt(b))
+			if (parseFloat(a) < parseFloat(b))
 			{
 				return -1;
 			}
-			if (parseInt(a) > parseInt(b))
+			if (parseFloat(a) > parseFloat(b))
 			{
 				return 1;
 			}  
 			return 0;
 		}
 		function swap(array, a, b) {
+			
 			var tmp1 = array[a];
 			var tmp2 = array[b];
 			array[a] = tmp2;
 			array[b] = tmp1;
 			return array;
 		}
-		function bubble(x)
-		{
-		do
-		{
-			swapp = false;
-			for (var i=0; i < x.length; i++)
-			{
-				if (parseInt(x[i]) > parseInt(x[i+1]))
-				{
-					var temp = x[i];
-					x[i] = x[i+1];
-					x[i+1] = temp;
-					swapp = true;
-				}
-			}
-			x.length--;
-		}
-		while (swapp);
-		console.log("bubble")
-		return x;
+		function bubble(a) {
+		  var swapped = false,
+		    i = 1,
+		    j = a.length,
+		    tmp;
+		 
+		  for (; i < j; i += 1) {
+		    if (a[i - 1] > a[i]) {
+		      tmp = a[i];
+		      a[i] = a[i - 1];
+		      a[i - 1] = tmp;
+		      swapped = true;
+		    }
+		  }
+		 
+		  if (swapped) {
+		    bubble(a);
+		  }
+		  return a;
 		}
 		function graph(){
 			google.charts.load('current', {'packages':['corechart']});
