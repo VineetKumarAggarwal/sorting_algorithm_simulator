@@ -230,7 +230,6 @@ $(document).ready(function()
 				val.push($('#getnumber'+j).val());	
 			}
 		}
-
 		var a=val
 		var swapp;
 		var x=a;
@@ -449,8 +448,7 @@ $(document).ready(function()
 			}
 			else
 			{
-				val.push($('#getnumber'+j).val());	
-
+				val.push($('#getnumber'+j).val());
 			}
 		}
 		var myArray = val;
@@ -476,7 +474,6 @@ $(document).ready(function()
 		graph();
 		for (var l=0; l<k; l++)
 		{
-			
 			my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result1[l]+"' placeholder='Enter Number'></div>"
 			$(".abc").addClass("hidden");
 		}
@@ -488,17 +485,16 @@ $(document).ready(function()
 		// }
 		// for (var l=0; l<k; l++)
 		// {
-			
 		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result2[l]+"' placeholder='Enter Number'></div>"
 		// 	$(".abc").addClass("hidden");
 		// }
 		// for (var l=0; l<k; l++)
 		// {
-		// 	
 		// 	my_div2.innerHTML = my_div2.innerHTML +"<div class='row'><input type='number' class='form-control mt-1 mb-1' value='"+result4[l]+"' placeholder='Enter Number'></div>"
 		// 	$(".abc").addClass("hidden");
 		// }
 		$('.btn2').addClass("hidden");
+		$('.btn4').addClass("hidden");
 	});
 	$('#all').click(function()
 	{
@@ -514,7 +510,6 @@ $(document).ready(function()
 			else
 			{
 				val.push($('#getnumber'+j).val());	
-
 			}
 		}
 		var myArray = val;
@@ -588,7 +583,6 @@ $(document).ready(function()
 						right.push(origArray[i]);
 					}
 				}
-				
 				return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
 			}
 		}
@@ -618,7 +612,6 @@ $(document).ready(function()
 				result.push(left.shift());
 			while (right.length)
 				result.push(right.shift());
-			
 			return result;
 		}
 		function selectionSort(array)
@@ -673,7 +666,6 @@ $(document).ready(function()
 		      swapped = true;
 		    }
 		  }
-		 
 		  if (swapped) {
 		    bubble(a);
 		  }
