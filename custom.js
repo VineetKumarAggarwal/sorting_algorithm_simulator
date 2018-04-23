@@ -269,6 +269,7 @@ $(document).ready(function()
 			if ($('#getnumber'+j).val()=="")
 			{
 				alert("Please enter appropriate values.");
+				val.length=0;
 				return false;
 			}
 			else
@@ -334,6 +335,7 @@ $(document).ready(function()
 			if ($('#getnumber'+j).val()=="")
 			{
 				alert("Please enter appropriate values.");
+				val.length=0;
 				return false;
 			}
 			else
@@ -389,6 +391,7 @@ $(document).ready(function()
 			if ($('#getnumber'+j).val()=="")
 			{
 				alert("Please enter appropriate values.");
+				val.length=0;
 				return false;
 			}
 			else
@@ -444,6 +447,7 @@ $(document).ready(function()
 			if ($('#getnumber'+j).val()=="")
 			{
 				alert("Please enter appropriate values.");
+				val.length=0;
 				return false;
 			}
 			else
@@ -505,6 +509,7 @@ $(document).ready(function()
 			if ($('#getnumber'+j).val()=="")
 			{
 				alert("Please enter appropriate values.");
+				val.length=0;
 				return false;
 			}
 			else
